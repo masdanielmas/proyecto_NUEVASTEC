@@ -36,6 +36,24 @@ const courseSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    requirements: [{
+        type: String
+    }],
+    objectives: [{
+        type: String
+    }],
+    rating: {
+        type: Number,
+        default: 0,
+    },
+    totalStudents: {
+        type: Number,
+        default: 0,
+    },
+    isPublished: {
+        type: Boolean,
+        default: false,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
