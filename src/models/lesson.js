@@ -23,4 +23,28 @@ const lessonSchema = mongoose.Schema({
     },
     duration: {
         type: Number, // duración en minutos
-        required: true,},});
+        required: true},
+    resources: [{
+        title: String,
+        url: String,
+        type: {
+            type: String,
+            enum: ['pdf', 'video', 'link', 'code']
+        }
+    }],
+    quiz: [{
+        question: String,
+        options: [String],
+        correctAnswer: Number
+    }],
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now,
+    }
+});
+
+module.exports = mongoose.model("Lesson", lessonSchema);
