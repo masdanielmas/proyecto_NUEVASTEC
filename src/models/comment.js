@@ -41,4 +41,27 @@ const commentSchema = mongoose.Schema({
             type: Number,
             default: 0
         }
-    }],})
+    }],
+    votos: {
+        type: Number,
+        default: 0
+    },
+    estado: {
+        type: String,
+        enum: ['pendiente', 'respondida', 'resuelta'],
+        default: 'pendiente'
+    },
+    etiquetas: [{
+        type: String
+    }],
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+module.exports = mongoose.model("Comment", commentSchema);
