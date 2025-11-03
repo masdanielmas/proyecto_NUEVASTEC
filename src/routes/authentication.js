@@ -5,9 +5,6 @@ const router = express.Router();
 const User = require("../models/user");
 const auth = require('../middleware/auth');
 
-module.exports = router;
-<<<<<<< HEAD
-=======
 // Registro de usuario
 router.post('/signup', async (req, res) => {
     try {
@@ -155,4 +152,4 @@ router.post("/change-password", auth, async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
->>>>>>> 354b200 (Se agrega el endpoint /change-password para actualización segura de contraseña mediante autenticación JWT)
+module.exports = router;
