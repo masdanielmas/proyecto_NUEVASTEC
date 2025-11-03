@@ -1,38 +1,11 @@
 {
-  "name": "plataforma-cursos",
+  "name": "proyecto_nuevastec",
   "version": "1.0.0",
-  "description": "Plataforma de cursos online estilo Platzi",
+  "description": "Para arrancar en desarrollo:\r 1) Crear un archivo `.env` con la variable MONGODB_URI apuntando a tu MongoDB.\r 2) npm install\r 3) npm run dev",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "test": "jest",
-    "lint": "eslint src/**/*.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "cursos",
-    "educacion",
-    "elearning",
-    "platzi"
-  ],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.2",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.18.2",
-    "morgan": "^1.10.0",
-    "multer": "^2.0.0",
-    "slugify": "^1.6.6",
-    "validator": "^13.11.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.56.0",
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.10",
-    "supertest": "^6.3.3"
-  }
+  "license": "ISC"
 }
