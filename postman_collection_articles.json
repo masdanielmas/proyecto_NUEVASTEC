@@ -1,0 +1,133 @@
+{
+  "info": {
+    "_postman_id": "b5d6a4f2-article-collection",
+    "name": "Articles API - apizoologico_danny",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección con requests para probar el CRUD de artículos (importar en Postman)."
+  },
+  "item": [
+    {
+      "name": "Create Article (POST /api/articles)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Análisis de comportamiento en entornos urbanos\",\n  \"ano_publicacion\": 2025,\n  \"resumen\": \"Estudio sobre la influencia del entorno urbano en el comportamiento.\",\n  \"cantidad_referencias\": 18,\n  \"nombre_bd\": \"Scopus\",\n  \"nombre_publicacion\": \"Revista de Ecología Urbana\",\n  \"url\": \"https://ejemplo.org/articulo/123\",\n  \"pdf\": \"https://ejemplo.org/articulo/123.pdf\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/articles",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "articles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Articles (GET /api/articles)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/articles",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "articles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Article by ID (GET /api/articles/:id)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/articles/{{articleId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "articles",
+            "{{articleId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Article (PUT /api/articles/:id)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Título actualizado\",\n  \"resumen\": \"Resumen actualizado.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/articles/{{articleId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "articles",
+            "{{articleId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Article (DELETE /api/articles/:id)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/articles/{{articleId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "articles",
+            "{{articleId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "articleId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
