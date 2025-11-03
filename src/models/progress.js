@@ -38,10 +38,22 @@ const progressSchema = mongoose.Schema({
         url: String
     },
 
+    notas: [{
+        leccion: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Lesson'
+        },
+        contenido: String,
+        fecha: {
+            type: Date,
+            default: Date.now
+        }
+    }],
     progreso_general: {
         type: Number,
         default: 0
     },
+
     createdAt: {
         type: Date,
         default: Date.now
@@ -51,5 +63,7 @@ const progressSchema = mongoose.Schema({
         default: Date.now
     }
 });
+// Índice compuesto para evitar duplicados
+progressSchema.index({ estudiante: 1, curso: 1 }, { unique: true });
 
 module.exports = mongoose.model("Progress", progressSchema);
