@@ -1,3 +1,7 @@
+const express = require("express");
+const router = express.Router();
+const User = require("../models/user");
+
 // Solo para desarrollo - listar usuarios
 router.get("/users", async (req, res) => {
     try {
